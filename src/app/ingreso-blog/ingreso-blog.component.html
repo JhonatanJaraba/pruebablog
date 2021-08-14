@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="card-body">
+    <h5 class="card-title">{{ titulo }}</h5>
+    <form>
+      <div class="form-group row">
+        <label for="nombre" class="col-form-label col-sm-2">Nombres</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            [(ngModel)]="blog.nombre"
+          />
+        </div>
+      </div>
+      <br />
+      <div class="form-group row">
+        <label for="contenido" class="col-form-label col-sm-2">Contenido</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="contenido"
+            [(ngModel)]="blog.contenido"
+          />
+        </div>
+      </div>
+      <br />
+      <div class="form-group row">
+        <label for="fecha" class="col-form-label col-sm-2">Fecha</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="fecha"
+            [(ngModel)]="blog.fecha"
+          />
+        </div>
+      </div>
+      <br />
+      <div class="form-group row">
+        <label for="imagen" class="col-form-label col-sm-2">Imagen</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            name="imagen"
+            [(ngModel)]="blog.imagen"
+          />
+        </div>
+      </div>
+      <br />
+      <button
+        class="btn btn-success"
+        role="button"
+        (click)="create()"
+        *ngIf="!blog.id; else elseBlock"
+      >
+        Registrar
+      </button>
+      <ng-template #elseBlock>
+        <button class="btn btn-warning" role="button" (click)="update()">
+          Actualizar
+        </button>
+      </ng-template>
+    </form>
+  </div>
+</div>

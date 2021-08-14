@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1>{{titulo}}</h1>
+    <button class="btn btn-info" type="button" [routerLink]="['/blogs/form']"> Nuevo Blog</button>
+    <table class="table caption-top">
+        <caption>Lista Completa</caption>
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Contenido</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let blog of blogs">
+            <th scope="row">{{blog.id}}</th>
+            <td>{{blog.imagen}}</td>
+            <td>{{blog.nombre}}</td>
+            <td>{{blog.contenido}}</td>
+            <td>{{blog.fecha}}</td>
+            
+            <td><button type="button" name="button"  class="btn btn-primary" [routerLink]="['/blogs/form',blog.id]">Editar</button></td>
+            <td><button class="btn btn-danger" (click)="delete(blog)">Eliminar</button></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+      <div class="container">
+    
+    </div>
